@@ -88,10 +88,7 @@ int writeMenu(int *choice)
 
 int loopMenu()
 {
-  int list_size;
-	static struct Node* root = NULL;
-	struct Node* temp = NULL;
-	struct Data* new_data = NULL;
+  
 	
 	/* A value to hold the menu item chosen */
 	int menuChoice = 0;
@@ -107,21 +104,15 @@ int loopMenu()
         case 1:
             printf("Push a node on the stack:\n");
             clean_stdin();
-            push_node(root, data);
+            push_node();
             break;
-        // Pop a node from stack.
+       // Pop a node from stack.
         case 2:
             printf("Pop a node from stack: \n");
             clean_stdin();
-            new_data = get_data();
-            print_data(new_data);	
-	          root = insert_middle(root, *new_data);
-	          list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
+            pop_node();
             break;
-        // Empty stack of all nodes.
+         /*// Empty stack of all nodes.
         case 3:
             printf("Empty stack of all nodes: \n");
             clean_stdin();
@@ -147,33 +138,20 @@ int loopMenu()
 	          print_linked_list(root);
             printf("Press enter to continue.\n");            
             break;
-            
+            */
         // Enqueue a node in the queue.
         case 5:
             printf("Enqueue a node in the queue: \n");
             clean_stdin();
-            root = remove_middle(root);
-            
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
-            printf("Press enter to continue.\n");
+            enqueue_node();
             break;
-        // Dequeue a node from the queue.
+       // Dequeue a node from the queue. (GETTING SEQ FAULT WHEN LIST EMPTY)
         case 6:            
             printf("\n\n\nDequeue a node from the queue: \n");
-            clean_stdin();            
-            root = remove_end(root);
-            
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
-	          
-            printf("\nPress enter to continue.\n");
+            clean_stdin(); 
+            dequeue_queue();           
             break;
-        // Empty Queue of all nodes
+         /*// Empty Queue of all nodes
         case 7:
             printf("\n\n\nEmpty Queue of all nodes: \n");
             clean_stdin();
@@ -197,7 +175,7 @@ int loopMenu()
 	          print_linked_list(root);
             printf("\nPress enter to continue.\n");
             break;
-        
+        */
         // Exit the program
         case 9:
             printf("\nClosing program!\n");

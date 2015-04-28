@@ -5,7 +5,7 @@
 * Name: Scott Jean  
 * Email: sajean@purdue.edu
 * Course: CNIT 315
-* Lab assignment: 5
+* Lab assignment: 6
 *
 * Collaborators:
 *   - None
@@ -23,7 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib.h"
+#include "lab5_lib.h"
+
 
 //INSERT FRONT
 
@@ -79,15 +80,19 @@ struct Node* insert_end(struct Node* root, struct Data data) {
 //REMOVE END
 
 struct Node* remove_end(struct Node* root) {
-		
+	
 	struct Node* temp = root;
 	struct Node* prev;
-	
-	
-	while (temp->next != NULL){	
-		prev=temp;
-		temp = temp->next;		
+	if(root==NULL){
+		printf("ERROR: Node was NULL\n");
 	}
+	while (temp->next != NULL){
+	  
+	 
+		prev=temp;
+		temp = temp->next;	
+			  }		
+	
 	free (prev->next);
 	prev->next = NULL;	
 	
