@@ -83,18 +83,17 @@ struct Node* remove_end(struct Node* root) {
 	
 	struct Node* temp = root;
 	struct Node* prev;
-	if(root==NULL){
-		printf("ERROR: Node was NULL\n");
-	}
+	
+		
 	while (temp->next != NULL){
 	  
 	 
 		prev=temp;
 		temp = temp->next;	
 			  }		
-	
+	prev->next = NULL;
 	free (prev->next);
-	prev->next = NULL;	
+		
 	
 	return root;
 	
@@ -273,6 +272,20 @@ struct Node* look_up_by_index(struct Node* root) {
 
 }
 
+// Remove all nodes in a structure
+
+void delete_list(struct Node **root){
+  struct Node* temp1 = *root;
+  struct Node* temp2;
+
+  while(temp1 != NULL){
+    temp2 = temp1->next;
+    free(temp1);
+    temp1 = temp2;
+    } 
+    *root = NULL;
+
+}
 
 /*INSERT FRONT 2
 
@@ -328,6 +341,19 @@ int size(struct Node* root){
 
 // PRINT DATA
 
+/*void printReverse(struct Node* node)
+{
+  // Base case 
+  if(node == NULL)
+    return;
+ 
+  // print the list after head node
+  printReverse(node->next);
+ 
+  // After everything else is printed, print head
+  printf("%s  ", node->data);
+}
+*/
 void print_data(struct Data* data){
 	if(data==NULL){
 		printf("ERROR: Data was NULL\n");

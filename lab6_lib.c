@@ -28,64 +28,85 @@
   static struct Node* root = NULL;
 	struct Node* temp = NULL;
 	struct Data* new_data = NULL;
-
+  int list_size;
 
 //Push to Stack
-void push_node(){
-int list_size;
-	
+void push_node(){	
 
-            new_data = get_data();
-	          print_data(new_data);	
-	          root = insert_front(root, *new_data);
-	          list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
+    new_data = get_data();
+    print_data(new_data);	
+    root = insert_front(root, *new_data);
+    list_size = size(root);
+    printf("\nList is %d long.\n", list_size);
 
-	          print_linked_list(root);
+    print_linked_list(root);
 }
 
 //Pop from stack
 
 void pop_node(){
-int list_size;
-            root = remove_front(root);
-            
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
 
-	          print_linked_list(root);   
+    root = remove_front(root);
+    list_size = size(root);
+    printf("\nList is %d long.\n", list_size);
+    print_linked_list(root);  
 
+}
+// Print Stack
+
+void print_stack(){
+
+    list_size = size(root);
+    printf("\nList is %d long.\n", list_size);
+    print_linked_list(root);
 
 }
 
 //Enqueue to queue
 void enqueue_node(){
-int list_size;
-	
 
-            new_data = get_data();
-	          print_data(new_data);	
-	          root = insert_front(root, *new_data);
-	          list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
+    new_data = get_data();
+    print_data(new_data);	
+    root = insert_front(root, *new_data);
+    list_size = size(root);
+    printf("\nList is %d long.\n", list_size);
+    print_linked_list(root);
 }
+
 // Dequeue from queue
-void dequeue_queue(){
-int list_size;
-
-            root = remove_end(root);
+void dequeue_queue(){     
             
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
-	          
-            printf("\nPress enter to continue.\n");
-
-
+  root = remove_end(root);
+  printf(">>>>>>> HEY LOOK AT ME <<<<<<<");
+  list_size = size(root);
+  printf("\nList is %d long.\n", list_size);
+  print_linked_list(root);
+    
 }
+
+//Print Queue
+void print_queue(){
+  list_size = size(root);
+  printf("\nList is %d long.\n", list_size);
+  //printReverse(root);
+}
+
+//DELETE Stack LIST
+void remove_stack_nodes(){
+  delete_list(root);
+  list_size = size(root);
+  printf("\nList is %d long.\n", list_size);
+  print_linked_list(root);
+  }
+
+//DELETE queue LIST
+void remove_queue_nodes(){
+  delete_list(root);
+  list_size = size(root);
+  printf("\nList is %d long.\n", list_size);
+  print_linked_list(root);
+  }
+
 /*//INSERT END
 
 struct Node* insert_end(struct Node* root, struct Data data) {

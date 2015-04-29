@@ -34,13 +34,16 @@ struct Node{
 	struct Node *next;
 };
 
-//Stack Functions
+//Stack and Queue Functions
 
 void push_node();
 void pop_node();
+void print_stack();
 void enqueue_node();
-void dequeue_queue();   
-
+void dequeue_queue(); 
+void print_queue(); 
+void remove_stack_nodes();
+void remove_queue_nodes();
 /* Menu Functions */
 
 int writeMenu(int *choice);
@@ -57,6 +60,7 @@ struct Node* remove_front(struct Node* root);
 struct Node* remove_end(struct Node* root);
 struct Node* remove_middle(struct Node* root);
 struct Node* look_up_by_index(struct Node* root);
+void delete_list(struct Node **root);
 int traverse_first(struct Node* root);
 int traverse_last(struct Node* root);
 int traverse_id(struct Node* root);
@@ -68,4 +72,5 @@ int size(struct Node* root);
 void print_data(struct Data* data);
 void print_node(struct Node* node);
 void print_linked_list(struct Node* root);
+void printReverse(struct Node* root);
 

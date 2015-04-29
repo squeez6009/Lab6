@@ -112,70 +112,51 @@ int loopMenu()
             clean_stdin();
             pop_node();
             break;
-         /*// Empty stack of all nodes.
+         // Empty stack of all nodes.
         case 3:
             printf("Empty stack of all nodes: \n");
             clean_stdin();
-            
-            new_data = get_data();
-            print_data(new_data);	
-	          root = insert_end(root, *new_data);
-	          
-	          list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
+            void remove_stack_nodes();
             break;
         // Print Stack.
         case 4:
             printf("Print Stack: \n");
             clean_stdin();
-            
-            root = remove_front(root);
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
+            print_stack();
             printf("Press enter to continue.\n");            
             break;
-            */
+            
         // Enqueue a node in the queue.
         case 5:
             printf("Enqueue a node in the queue: \n");
             clean_stdin();
             enqueue_node();
             break;
-       // Dequeue a node from the queue. (GETTING SEQ FAULT WHEN LIST EMPTY)
-        case 6:            
-            printf("\n\n\nDequeue a node from the queue: \n");
-            clean_stdin(); 
-            dequeue_queue();           
+       // Dequeue a node from the queue. (GETTING SEG FAULT WHEN LIST EMPTY)
+        case 6: 
+         
+            printf("\n\n\nDequeue a node from the queue: \n");                      
+            clean_stdin();             
+            dequeue_queue();  
+                     
             break;
-         /*// Empty Queue of all nodes
+        // Empty Queue of all nodes
         case 7:
             printf("\n\n\nEmpty Queue of all nodes: \n");
             clean_stdin();
-            root = remove_end(root);
+            void remove_queue_nodes();
+            printf("\nPress enter to continue.\n");
+            break; 
             
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
-	          
-            printf("\nPress enter to continue.\n");
-            break;
             // Print queue
-        case 8:
-        
+        case 8:        
+            
+            printf("\n\nPrint out Queue: \n");
             clean_stdin();
-            printf("\n\nPrint out linked list: \n");
-            list_size = size(root);
-            printf("\nList is %d long.\n", list_size);
-
-	          print_linked_list(root);
+            print_queue();            
             printf("\nPress enter to continue.\n");
             break;
-        */
+       
         // Exit the program
         case 9:
             printf("\nClosing program!\n");
