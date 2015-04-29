@@ -60,7 +60,7 @@ struct Node* remove_front(struct Node* root);
 struct Node* remove_end(struct Node* root);
 struct Node* remove_middle(struct Node* root);
 struct Node* look_up_by_index(struct Node* root);
-void delete_list(struct Node **root);
+void delete_list(struct Node *root);
 int traverse_first(struct Node* root);
 int traverse_last(struct Node* root);
 int traverse_id(struct Node* root);

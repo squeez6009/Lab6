@@ -35,12 +35,14 @@ int writeMenu(int *choice)
 {
 	printf("\n\nThis program creates and manipulates Stacks and Queues:\n");
 	printf("\n\nStack Functions:\n");
+	printf("============================\n");
 	printf("\n1. Push a node on the stack.\n2. Pop a node from stack.");
-	printf("\n3. Empty stack of all nodes.\n4. Print Stack.");
+	printf("\n3. Empty stack of all nodes.\n4. Print stack.");
 	printf("\n\nQueue Functions:\n");
+	printf("============================\n");
 	printf("\n5. Enqueue a node in the queue.\n6. Dequeue a node from the queue.");
-	printf("\n7. Empty Queue of all nodes.\n8. Print Queue");
-	printf("\n9. Exit Program\n");
+	printf("\n7. Empty queue of all nodes.\n8. Print queue");
+	printf("\n\n9. Exit Program\n\n");
 	printf("Please make a choice [1-9]: ");
 	scanf("%d", choice);
 
@@ -116,7 +118,7 @@ int loopMenu()
         case 3:
             printf("Empty stack of all nodes: \n");
             clean_stdin();
-            void remove_stack_nodes();
+            remove_stack_nodes();
             break;
         // Print Stack.
         case 4:
@@ -144,7 +146,7 @@ int loopMenu()
         case 7:
             printf("\n\n\nEmpty Queue of all nodes: \n");
             clean_stdin();
-            void remove_queue_nodes();
+            remove_queue_nodes();
             printf("\nPress enter to continue.\n");
             break; 
             

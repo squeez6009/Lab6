@@ -55,6 +55,15 @@ struct Node* remove_front(struct Node* root) {
 	return root;
 }
 
+// Remove all nodes in a structure
+
+ struct Node* delete_list(struct Node *root){
+  
+  while(root != NULL){
+    root = remove_front(root);
+    } 
+    return root;
+}
 
 
 //INSERT END
@@ -83,24 +92,28 @@ struct Node* remove_end(struct Node* root) {
 	
 	struct Node* temp = root;
 	struct Node* prev;
-	
-		
+	if(root->next==NULL)
+  {
+    free(root);
+    root=NULL;
+  }
+	else{	
 	while (temp->next != NULL){
 	  
 	 
 		prev=temp;
 		temp = temp->next;	
 			  }		
-	prev->next = NULL;
 	free (prev->next);
-		
+	prev->next = NULL;
+	
+		}
 	
 	return root;
 	
 }
 
 //INSERT MIDDLE  
-//help :  https://www.youtube.com/watch?v=tta6BIiIIFI
 
 struct Node* insert_middle(struct Node* root, struct Data data) {
 	struct Node *new_node = malloc(sizeof(struct Node));
@@ -272,42 +285,8 @@ struct Node* look_up_by_index(struct Node* root) {
 
 }
 
-// Remove all nodes in a structure
 
-void delete_list(struct Node **root){
-  struct Node* temp1 = *root;
-  struct Node* temp2;
 
-  while(temp1 != NULL){
-    temp2 = temp1->next;
-    free(temp1);
-    temp1 = temp2;
-    } 
-    *root = NULL;
-
-}
-
-/*INSERT FRONT 2
-
-struct Node* insert_front_2(struct Node* root, char* name, int age) {
-	struct Node *new_node = malloc(sizeof(struct Node));
-	
-	memcpy ( name, &((*new_node).data.name), sizeof(char)*NAME_LENGTH);
-	new_node->data.age = age;
-	
-	new_node->next = NULL;
-	
-	if (root == NULL){
-		return new_node;
-	}
-	
-	
-	new_node->next = root;
-	
-	return new_node;
-
-}
-*/
 // GET DATA
 
 struct Data* get_data() {
