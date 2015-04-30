@@ -318,21 +318,6 @@ int size(struct Node* root){
 }
 
 
-// PRINT DATA
-
-/*void printReverse(struct Node* node)
-{
-  // Base case 
-  if(node == NULL)
-    return;
- 
-  // print the list after head node
-  printReverse(node->next);
- 
-  // After everything else is printed, print head
-  printf("%s  ", node->data);
-}
-*/
 void print_data(struct Data* data){
 	if(data==NULL){
 		printf("ERROR: Data was NULL\n");

@@ -89,7 +89,10 @@ struct Node* insert_end(struct Node* root, struct Data data) {
 //REMOVE END
 
 struct Node* remove_end(struct Node* root) {
-	
+	if (root == NULL){
+	printf("Root is NULL");
+	return NULL;
+}
 	struct Node* temp = root;
 	struct Node* prev;
 	if(root->next==NULL)
